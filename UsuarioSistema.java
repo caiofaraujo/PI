@@ -100,7 +100,10 @@ public class UsuarioSistema {
     List<String> papeisUsuario = Arrays.asList(papeis);
     return papeisUsuario.contains(papel);
   }
-
+// # PROCESSO DE SENHAS HASH
+// @param usuario
+// @param senha
+	
   public static UsuarioSistema obterUsuario(String usuario, String senha) {
     UsuarioSistema usuarioEncontrado = USUARIOS_CADASTRADOS.get(usuario);
     if (usuarioEncontrado != null && BCrypt.checkpw(senha, usuarioEncontrado.getHashSenha())) {
